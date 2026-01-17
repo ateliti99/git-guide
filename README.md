@@ -2,7 +2,7 @@
 
 > A decentralized, open-source travel directory built entirely on GitHub.
 
-[![Vote Manager](https://github.com/your-org/git-guide/actions/workflows/vote_manager.yml/badge.svg)](https://github.com/your-org/git-guide/actions/workflows/vote_manager.yml)
+[Vote Manager](https://github.com/ateliti99/git-guide/blob/main/.github/workflows/vote_manager.yml)
 
 ## What is Git Guide?
 
