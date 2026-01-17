@@ -142,10 +142,6 @@ The GitHub Action uses:
 - `GITHUB_TOKEN` - Automatically provided
 - `GITHUB_REPOSITORY` - Automatically provided
 
-## 📜 License
-
-This project is open source under the [MIT License](LICENSE).
-
 ---
 
 <p align="center">
