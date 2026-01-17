@@ -121,27 +121,6 @@ See **[CONTRIBUTING.md](CONTRIBUTING.md)** for detailed guidelines.
 - [View Open Proposals](../../issues?q=is%3Aissue+is%3Aopen+label%3Aproposal)
 - [Start a Discussion](../../discussions)
 
-## 🛡️ For Maintainers
-
-### Required Labels
-
-Create these labels in your repository:
-
-| Label | Color | Description |
-|-------|-------|-------------|
-| `proposal` | `#0E8A16` | Initial proposal submission |
-| `pending-votes` | `#FBCA04` | Waiting for community votes |
-| `mod-approved` | `#1D76DB` | Approved for bot processing |
-| `accepted` | `#0E8A16` | Successfully added to guide |
-| `rejected` | `#B60205` | Not approved |
-| `validation-failed` | `#D93F0B` | City validation failed |
-
-### Environment Variables
-
-The GitHub Action uses:
-- `GITHUB_TOKEN` - Automatically provided
-- `GITHUB_REPOSITORY` - Automatically provided
-
 ---
 
 <p align="center">
