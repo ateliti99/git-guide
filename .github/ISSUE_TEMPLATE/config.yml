@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Read the Guide
+    url: https://github.com/your-org/git-guide#readme
+    about: Learn how this project works before contributing.
+  - name: 💬 Discussions
+    url: https://github.com/your-org/git-guide/discussions
+    about: Ask questions or suggest improvements to the system.

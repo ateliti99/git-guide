@@ -1,0 +1,56 @@
+name: Vote Manager
+
+on:
+  # Run every 6 hours
+  schedule:
+    - cron: '0 */6 * * *'
+  
+  # Allow manual trigger
+  workflow_dispatch:
+  
+  # Run when mod-approved label is added
+  issues:
+    types: [labeled]
+
+jobs:
+  process-votes:
+    runs-on: ubuntu-latest
+    
+    # Only run if triggered by schedule/manual OR if the label is mod-approved
+    if: >
+      github.event_name == 'schedule' || 
+      github.event_name == 'workflow_dispatch' ||
+      (github.event_name == 'issues' && github.event.label.name == 'mod-approved')
+    
+    permissions:
+      contents: write
+      issues: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+      
+      - name: Install dependencies
+        run: pip install -r scripts/requirements.txt
+      
+      - name: Process approved proposals
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python scripts/process_votes.py
+      
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add countries/
+          git diff --staged --quiet || git commit -m "🤖 Auto-update: Add approved places"
+          git push

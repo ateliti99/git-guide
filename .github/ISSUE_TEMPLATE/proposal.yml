@@ -1,0 +1,85 @@
+name: 📍 Propose a Place
+description: Suggest a place to Eat or See in a city
+title: "[Proposal] "
+labels: ["proposal", "pending-votes"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🎉 Thanks for contributing!
+        
+        Please fill out the form below to propose a new place. 
+        The community will vote using 👍 and 👎 reactions.
+        
+        **How it works:**
+        1. Fill this form → Issue is created
+        2. Community votes with reactions
+        3. Moderator reviews and adds `mod-approved` label
+        4. Bot processes and adds to the guide!
+
+  - type: input
+    id: place_name
+    attributes:
+      label: Place Name
+      description: The name of the restaurant, landmark, or attraction
+      placeholder: "e.g., Trattoria da Mario"
+    validations:
+      required: true
+
+  - type: input
+    id: city
+    attributes:
+      label: City
+      description: The city where this place is located
+      placeholder: "e.g., Rome"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Is this a place to Eat or See?
+      options:
+        - Eat
+        - See
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Tell us why this place is special (2-3 sentences)
+      placeholder: "This family-run trattoria has been serving authentic Roman cuisine since 1952..."
+    validations:
+      required: true
+
+  - type: input
+    id: address
+    attributes:
+      label: Address (Optional)
+      description: Full address or Google Maps link
+      placeholder: "Via della Scrofa 31, 00186 Roma RM, Italy"
+    validations:
+      required: false
+
+  - type: input
+    id: website
+    attributes:
+      label: Website (Optional)
+      description: Official website or social media page
+      placeholder: "https://example.com"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      description: Please confirm the following
+      options:
+        - label: I have searched and this place is not already in the guide
+          required: true
+        - label: This is a real place that I have personally visited or verified
+          required: true

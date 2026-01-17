@@ -1,0 +1,6 @@
+# Git Guide Dependencies
+# Install with: pip install -r requirements.txt
+
+PyGithub>=2.1.1
+geopy>=2.4.1
+python-dotenv>=1.0.0
